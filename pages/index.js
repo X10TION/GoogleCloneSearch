@@ -1,9 +1,24 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import { useRef } from 'react'
 import Avater from '../components/avater'
 import Footer from '../components/Footer'
+import { useRouter } from 'next/router'
+import Image1 from '../public/images.png'
+import Image from 'next/image'
 
 export default function Home() {
+  const router = useRouter()
+  const searchInputRef = useRef(null)
+  
+  const search = (e) => {
+    e.preventDefault()
+    const term = searchInputRef.current.value
+    if(!term) return
+    router.push(`/search?term=${term}`)
+
+
+
+  }
   return (
     <div className='flex flex-col items-center justify-center h-screen'>
       <Head>
@@ -37,17 +52,17 @@ export default function Home() {
 
       {/* body component  */}
      <form className='flex flex-col items-center mt-44 flex-grow w-4/5 '>
-      <img
-      src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
-      height={100}
-      width={300}
+      <Image
+      src={Image1}
+      height={120}
+      width={200}
       alt="Google logo"
       />
       <div className='flex w-full mt-5 hover:shadow-lg focus-within:shadow-lg max-w-md rounded-full border border-gray-200 px-5 py-3 items-center sm:max-width-xl lg:max-w-2xl'>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" className='h-5 mr-3 text-grey-500'>
   <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
       </svg>
-      <input type="text" className='focus:outline-none flex-grow' />
+      <input type="text" className='focus:outline-none flex-grow'  ref={searchInputRef}/>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className='h-5 mr-3 text-grey-500'>
   <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
           </svg>
@@ -57,8 +72,8 @@ export default function Home() {
       </div>
       {/* bton */}
       <div className='manage'>
-        <button className='btn'>Google Search</button>
-        <button className='btn'>I'm feeling luck</button>
+        <button className='btn' onClick={search}>Google Search</button>
+        <button className='btn' onClick={search}>I'm feeling luck</button>
       </div>
      </form>
      {/* footer */}
