@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRef } from 'react'
-import Avater from '../components/avater'
+// import Avater from '../components/avater'
 import Footer from '../components/Footer'
 import { useRouter } from 'next/router'
 import Image1 from '../public/images.png'
@@ -46,7 +46,7 @@ export default function Home() {
   <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
         </svg>
 
-        <Avater  url={'https://pbs.twimg.com/profile_images/1570099418413633543/brzRESBX_400x400.jpg'}/>
+        {/* <Avater  url={'https://pbs.twimg.com/profile_images/1570099418413633543/brzRESBX_400x400.jpg'}/> */}
        </div>
       </header>
 

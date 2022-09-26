@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouter} from "next/router"
 import { useRef } from 'react'
-import Avater from '../components/avater'
+// import Avater from '../components/avater'
 import HeaderOption from './headerOption'
 import Image from '../public/images.png'
 
@@ -47,7 +47,7 @@ export default function Header() {
         </button>
       </form>
 
-      <Avater className="ml-auto" url={'https://pbs.twimg.com/profile_images/1570099418413633543/brzRESBX_400x400.jpg'}/>
+      {/* <Avater className="ml-auto" url={'https://pbs.twimg.com/profile_images/1570099418413633543/brzRESBX_400x400.jpg'}/> */}
       </div>
       {/* header options here */}
       <div>
